@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudShare | Modern File Sharing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<div class="container animate__animated animate__fadeIn">
+    <h1 class="animate__animated animate__fadeInDown">CloudShare</h1>
+
+    <div class="upload-area" id="uploadArea">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <h3>Drag & Drop your files here</h3>
+        <p>or click to browse files</p>
+        <button class="btn" id="selectButton">
+            <i class="fas fa-folder-open"></i> Select File
+        </button>
+    </div>
+
+    <input type="file" id="fileInput">
+
+    <div id="fileInfo" class="file-info hidden">
+        <i class="fas fa-file-alt file-icon"></i>
+        <div class="file-details">
+            <div class="file-name" id="fileName"></div>
+            <div class="file-size" id="fileSize"></div>
+        </div>
+    </div>
+
+    <button class="btn btn-secondary" id="uploadButton" style="display: none;">
+        <i class="fas fa-upload"></i> Upload File
+    </button>
+
+    <div id="progressContainer">
+        <progress id="uploadProgress" value="0" max="100"></progress>
+        <span id="progressText">0% uploaded</span>
+    </div>
+
+    <div id="result">
+        <p id="successMessage"><i class="fas fa-check-circle"></i> Your file has been uploaded successfully!</p>
+        <div class="link-container">
+            <input type="text" id="fileLink" readonly>
+            <button id="copyButton"><i class="fas fa-copy"></i></button>
+        </div>
+        <button class="btn" id="newUploadButton">
+            <i class="fas fa-plus"></i> Upload Another File
+        </button>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
